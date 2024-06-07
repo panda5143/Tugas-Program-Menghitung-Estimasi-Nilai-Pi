@@ -16,7 +16,6 @@ def power_law(x, a, b):
     return a * np.power(x, b)
 
 def fit_power_law_model(X, y):
-    # Hindari nilai X yang nol
     X_nonzero = X[X > 0]
     y_nonzero = y[X > 0]
     params, _ = curve_fit(power_law, X_nonzero, y_nonzero, p0=[1, 2])
